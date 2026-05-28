@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Product preview card component</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrapper">
+      <article class="product-card">
+        <picture class="product-card__media">
+          <source
+            media="(min-width: 768px)"
+            srcset="assets/images/image-product-desktop.jpg"
+          />
+          <img
+            src="assets/images/image-product-mobile.jpg"
+            alt="Gabrielle Chanel perfume bottle laying flat surrounded by green leaves"
+            class="product-card__image"
+          />
+        </picture>
+
+        <div class="product-card__content">
+          <span class="product-card__category">Perfume</span>
+
+          <h1 class="product-card__title">Gabrielle Essence Eau De Parfum</h1>
+
+          <p class="product-card__description">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+
+          <div class="product-card__price-group">
+            <span class="product-card__price product-card__price--current">
+              $149.99
+            </span>
+            <del class="product-card__price"> $169.99 </del>
+          </div>
+
+          <button class="product-card__button" type="button">
+            <!-- <svg
+              class="product-card__icon"
+              width="15"
+              height="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.383 10.388a2.397 2.397 0 0 0-2.383-2.201H4.217l-.112-.622L3.52 4.167A.179.179 0 0 0 3.345 4H.417A.422.422 0 0 0 0 4.417V5.5c0 .23.188.417.417.417h1.498l1.325 7.362a2.393 2.393 0 0 0 2.363 1.971h6.58a2.397 2.397 0 0 0 2.383-2.201l.417-2.661a.423.423 0 0 0-.417-.461Zm-3.596 4.362a1.042 1.042 0 1 1 0-2.084 1.042 1.042 0 0 1 0 2.084Zm-4.583 0a1.042 1.042 0 1 1 0-2.084 1.042 1.042 0 0 1 0 2.084Z"
+                fill="#FFF"
+              />
+            </svg> -->
+
+            <img
+              src="assets/images/icon-cart.svg"
+              alt=""
+              class="product-card__icon"
+              aria-hidden="true"
+            />
+            Add to Cart
+          </button>
+        </div>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
+</html>
