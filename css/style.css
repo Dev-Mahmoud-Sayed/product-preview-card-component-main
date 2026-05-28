@@ -34,7 +34,7 @@ body {
   background-color: var(--color-bg);
 
   font-family: var(--font-family-sans);
-  font-size: 0.875rem; /* 14px خط البراجراف ثابت طبقاً للـ Style Guide */
+  font-size: 0.875rem; /* 14px  */
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
@@ -71,7 +71,7 @@ body {
   margin-block-end: 0.75rem;
 
   color: var(--color-neutral-600);
-  font-size: 0.75rem; /* 12px ثابت حسب الـ Style Guide */
+  font-size: 0.75rem; /* 12px  */
   letter-spacing: 0.3125rem;
   text-transform: uppercase;
 }
@@ -81,7 +81,7 @@ body {
 
   color: var(--color-neutral-900);
   font-family: var(--font-family-serif);
-  /* يتغير بسلاسة بين 32px في الموبايل و 40px في الديسكتوب بناء على حجم الشاشة */
+  /* 32px to 40px */
   font-size: clamp(2rem, 3.5vw + 1rem, 2.5rem);
   font-weight: var(--font-weight-bold);
   line-height: 1;
