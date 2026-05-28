@@ -1,7 +1,8 @@
+/* Global Resets & Custom Properties (Variables) */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 :root {
@@ -23,26 +24,32 @@
   --font-weight-bold: 700;
 }
 
+/* Base Styles */
 body {
-  min-height: 100vh;
-  background-color: var(--color-bg);
-  font-family: var(--font-family-sans);
-  font-weight: var(--font-weight-medium);
-  font-size: 0.875rem; /* 14px */
-  line-height: 1.5;
-
   display: grid;
   place-content: center;
-  padding: 40px 24px;
+  min-height: 100vh;
+  padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 3vw, 1.5rem);
+
+  background-color: var(--color-bg);
+
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem; /* 14px خط البراجراف ثابت طبقاً للـ Style Guide */
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
 }
 
+/* Product Card Component (Fluidly Optimized) */
 .product-card {
-  background-color: var(--color-neutral-100);
-  max-width: 343px;
-  border-radius: 10px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  width: 100%;
+  max-width: 21.4375rem; /* 343px */
+
+  background-color: var(--color-neutral-100);
+  border-radius: 0.625rem;
+  overflow: hidden;
 }
 
 .product-card__media {
@@ -50,71 +57,80 @@ body {
 }
 
 .product-card__media img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .product-card__content {
-  padding: 24px;
+  padding: clamp(1.5rem, 4vw, 2rem);
 }
 
 .product-card__category {
   display: block;
-  font-size: 0.75rem; /* 12px */
+  margin-block-end: 0.75rem;
+
   color: var(--color-neutral-600);
-  letter-spacing: 5px;
+  font-size: 0.75rem; /* 12px ثابت حسب الـ Style Guide */
+  letter-spacing: 0.3125rem;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
 
 .product-card__title {
-  font-family: var(--font-family-serif);
-  font-weight: var(--font-weight-bold);
-  font-size: 2rem;
+  margin-block-end: 1rem;
+
   color: var(--color-neutral-900);
+  font-family: var(--font-family-serif);
+  /* يتغير بسلاسة بين 32px في الموبايل و 40px في الديسكتوب بناء على حجم الشاشة */
+  font-size: clamp(2rem, 3.5vw + 1rem, 2.5rem);
+  font-weight: var(--font-weight-bold);
   line-height: 1;
-  margin-bottom: 16px;
 }
 
 .product-card__description {
+  margin-block-end: clamp(1.25rem, 3vw, 1.5rem);
+
   color: var(--color-neutral-600);
-  margin-bottom: 24px;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .product-card__price-group {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 1.25rem;
+
+  margin-block-end: clamp(1.25rem, 3vw, 1.875rem);
 }
 
 .product-card__price--current {
-  font-family: var(--font-family-serif);
-  font-weight: var(--font-weight-bold);
-  font-size: 2rem;
   color: var(--color-primary-500);
+  font-family: var(--font-family-serif);
+  font-size: clamp(2rem, 2vw + 1.2rem, 2.25rem);
+  font-weight: var(--font-weight-bold);
 }
 
 .product-card__price--old {
-  font-size: 0.8125rem; /* 13px */
   color: var(--color-neutral-600);
+  font-size: 0.8125rem; /* 13px  */
 }
 
 .product-card__button {
-  width: 100%;
-  background-color: var(--color-primary-500);
-  color: var(--color-neutral-100);
-  border: none;
-  padding: 15px;
-  font-weight: var(--font-weight-bold);
-  border-radius: 8px;
-  cursor: pointer;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
+
+  width: 100%;
+  padding: 0.9375rem;
+
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-100);
+  border: none;
+  border-radius: 0.5rem;
+
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
 
   transition: background-color 0.2s ease;
 }
@@ -123,26 +139,38 @@ body {
   background-color: var(--color-primary-700);
 }
 
-/* Media Queries (Responsive Design) */
-/* 768px */
+/* Media Queries & Accessibility */
 @media (min-width: 48em) {
+  /* 768px */
   .product-card {
     flex-direction: row;
-    max-width: 600px;
+    max-width: 37.5rem; /* 600px */
   }
 
   .product-card__media,
   .product-card__content {
     flex: 1;
   }
+
   .product-card__media img {
     height: 100%;
     object-fit: cover;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global Utilities / Attribution */
 .attribution {
+  margin-block-start: 1.25rem;
+
   text-align: center;
-  margin-top: 20px;
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
